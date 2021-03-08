@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "edu.thomasdacosta";
+option java_outer_classname = "TwitterGrpc";
+option objc_class_prefix = "HLW";
+
+package edu.thomasdacosta;
+
+service TwitterGrpcService {
+  rpc send (TwitterGrpcRequest) returns (TwitterGrpcReply) {}
+}
+
+message TwitterGrpcRequest {
+  string name = 1;
+}
+
+message TwitterGrpcReply {
+  string message = 1;
+}
